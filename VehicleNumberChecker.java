@@ -16,7 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * The class used Indian Govt's website https://parivahan.gov.in to check vehicle number and retrieve information
+ * The class uses Indian Govt's website https://parivahan.gov.in to check vehicle number and retrieve information
  *
  * Reference Code: https://gist.github.com/githubsrinath/560e2382cb3f84e421f8cf14e5e912b0#file-03-java-or-android
  *
@@ -25,10 +25,17 @@ import java.util.regex.Pattern;
 public class VehicleNumberChecker {
 
     public static void main(String[] args) {
-        String utOrState = "XX";        //  Must be 2 letters and characters only
-        String districtNumber = "00";   //  Must be 2 letters and numbers only
-        String additionalCode = "XX";   //  optional and can be blank
-        String serialNumber = "0000";   //  Must be 4 letters and numbers only
+        //  Must be 2 letters and characters only (Union Territory / State code)
+        String utOrState = "XX";
+
+        //  Must be 2 letters and numbers only    (District serial number)
+        String districtNumber = "00";
+
+        //  optional and can be blank             (Optional code for additional sub-category needs)
+        String additionalCode = "XX";
+
+        //  Must be 4 letters and numbers only    (Vehicle serial number)
+        String serialNumber = "0000";
 
         Map<String, String> data = getData(utOrState + districtNumber + additionalCode + serialNumber);
 
