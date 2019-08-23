@@ -1,4 +1,3 @@
-package com.study.java11;
 
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpStatus;
